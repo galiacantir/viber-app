@@ -1,0 +1,281 @@
+body{
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #333;
+
+    /*-- Design Palette*/
+    --dark-violet: #59267c;
+    --light-violet: #8f5db7;
+    --light-color: #e2d4e7;
+    --details-color: #a5cfd5;
+    
+    --primary-color: #222;
+
+    --height: 1136px;
+    --width: 640px;
+}
+
+/* phone */
+
+/* HW: karkas- gradient, radius, units
+   HW: 3 icons, screen up*/
+
+
+
+/*--- General Style ---*/
+   
+.mockphone{
+    background-color: #555;
+    transform: scale(0.6);
+    display: inline-block;
+    padding: 28px 15px 25px 15px;
+    border: 1px solid black;
+    border-radius: 25px; 
+}
+
+.mockphone .mobile-status{
+    display: flex;
+    justify-content: right;
+}
+
+.mockphone .mobile-status i{
+    padding: 9px;
+}
+.mockphone .screen{
+    width: var(--width);
+    height: var(--height);
+    /* background-color: var(--light-color);  */
+    border: 1px solid black;
+    
+    
+}
+
+#viber-app{
+    background-color: var(--light-color);
+    width: 100%;
+    height: 100%;
+    position: relative;
+    font-size: 20px;
+    
+}
+
+/*--- Header Style --- */
+
+#viber-app header{
+    height: 9%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 20px;
+    background-color: var(--dark-violet);
+    color: var(--light-color);
+
+}
+
+.header-menu h1{
+    display: inline-block;
+    margin-left: 20px;
+    font-size: 24px;
+    
+}
+
+header .main-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav .header-search a:first-child{
+    margin-right: 15px;
+}
+
+header .secondary-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+header a{
+    text-decoration: none;
+    color: var(--light-color);
+}
+
+header .secondary-nav .chats, 
+header .secondary-nav .calls{
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: var(--primary-color);
+    border-radius: 30%;
+}
+
+
+/* ---Section-Body Style--- */
+
+#viber-app section{
+    height: 86%;
+    width: 100%;
+    background-color: var(--light-color);
+    position: relative;
+    color: var(--main-color);
+    
+}
+
+#viber-app .contacts{
+    height: 100%;
+    overflow-y: scroll ;
+    scroll-snap-type: y mandatory;
+}
+
+#viber-app .contacts li{
+    height:calc(100% / 7.8);
+    border-bottom: 1px solid var(--primary-color);
+    box-sizing: border-box;
+
+    scroll-snap-align: start;
+}
+
+#viber-app .contacts a{
+    text-decoration: none;
+    color: var(--primary-color); 
+    
+}
+
+#viber-app .contact img{
+    width: 80px;
+    border-radius: 40%;
+    margin: 5px 10px;
+    
+}
+
+#viber-app .contact{
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+#viber-app .contact h2{
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+.time{
+    padding: 7px 0;
+}
+
+.status .read{
+    color: rgb(26, 203, 26);
+    
+}
+
+.status .unread{
+    color: #666;
+}
+
+.item{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;   
+}
+
+#viber-app .data{
+    margin-right: 10px;
+    text-align: center;
+}
+
+.count{
+    width: 25px;
+    height: 25px;
+    line-height: 1.4;
+    background-color: var(--details-color);
+    margin-top: 5px;
+    margin-left: 5px;
+    text-align: center;    
+    font-size: 15px;
+    border-radius: 40%;
+}
+
+.count span{
+    vertical-align: middle;
+    
+}
+
+/*---Scroll Bar ---*/
+
+#viber-app .contacts::-webkit-scrollbar{
+    width: 10px;
+    background-color: var(--dark-violet);
+    display: none;
+    position: fixed;
+}
+
+#viber-app .contacts:hover::-webkit-scrollbar, 
+#viber-app .contacts:active::-webkit-scrollbar 
+{
+    display: block;
+}
+
+
+
+/*---Footer Style ---*/
+
+#viber-app footer{
+    height: 5%;
+    width: 100%;
+   
+    background-color: var(--light-violet);
+    bottom: 0;
+}
+
+.settings-footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 2.5%;
+ }
+ 
+ .settings-footer li{
+     list-style-type: none;
+     display: inline-block;
+ }
+ 
+ .settings-footer li a{
+     color: var(--primary-color); 
+     text-decoration: none; 
+     font-size: 24px; 
+ }
+
+ /*---- Fixed Button---*/
+
+
+ .viber-btn-container{
+    position: fixed;
+    right: 3em;
+    bottom: 4.5em;
+    padding: 24px;
+
+}
+
+.viber-btn{
+    font-size: 2em;
+    color: var(--light-color);
+    background-color: var(--dark-violet);
+    padding: 12px 20px;
+    border-radius: 50%;
+}
+
+
+
+/*ADAPTIVE*/
+
+/* @media (orientation: landscape){
+    #viber-app .contacts li{
+        height: calc(100% / 3.7);
+    }
+}
+
+@media (orientation: landscape) and (min-aspect-ratio: 18/10){
+    #viber-app .contacts li{
+        height: calc(100% / 2.7);
+    }
+}  */
